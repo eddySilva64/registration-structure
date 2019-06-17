@@ -25,6 +25,10 @@ const UserSchema = new mongoose.Schema({
 
 });
 
+/**
+ * Função que para ecriptar o password antes de salvar ele no banco de dados
+ * UserSchema.pre = vai rodar antes de salva no BD
+ */
 UserSchema.pre('save', async function(next){
     const hash = await bcrypt.hash(this.password, 10);
     this.password = hash;
