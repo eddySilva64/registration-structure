@@ -1,3 +1,6 @@
+/**
+ * Controller de rotas para fazer o cadastro e autenticação do login
+ */
 const express = require('express');
 const User = require('../Models/User');
 const bcrypt = require('bcryptjs');
