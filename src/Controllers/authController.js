@@ -41,7 +41,7 @@ router.post('/register', async (req, res) =>{
          });
         
     } catch (err) {
-        return res.status(400).send({error: 'Registration Failed'});
+        return res.status(400).send({error: 'Registration Failed'});   
     }
 });
 
@@ -50,6 +50,7 @@ router.post('/register', async (req, res) =>{
  */
 router.post('/authenticate', async(req, res)=>{
     const { email, password } = req.body;
+
     const user = await User.findOne({ email }).select('+password');
 
     //If abaixo ira veriicar se o usuario existe ou não
