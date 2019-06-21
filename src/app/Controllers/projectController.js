@@ -10,7 +10,6 @@ router.use(authMiddleware);
 
 router.get('/', (req, res) =>{
   let db = res.send({ ok: true, user: req.userId});
-  console.log(db)
 });
 
 module.exports = app => app.use('/projects', router)
